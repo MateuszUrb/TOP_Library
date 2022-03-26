@@ -1,0 +1,265 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cabin_font: "Cabin", sans-serif;
+  --navy: #21325e;
+  --navy_light: #3e497a;
+  --navy_shadow: #7d86b4;
+  --modal_shadow: #7d86b475;
+  --yellow: #f1d00a;
+  --grey: #f0f0f0;
+  --remove: #ff1818;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+body {
+  font-family: "Cabin", sans-serif;
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto auto 1fr auto;
+}
+
+.header {
+  background-color: var(--navy_light);
+  width: 100vw;
+  display: flex;
+  height: 5rem;
+  align-items: center;
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  z-index: 0;
+}
+
+.cta__default {
+  border-radius: 4px;
+  z-index: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--grey);
+  cursor: pointer;
+  border: none;
+  padding: 1rem 2rem;
+  background-color: var(--navy_light);
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  filter: drop-shadow(0 5px 4px var(--navy_shadow));
+}
+
+.cta__default:hover {
+  color: var(--yellow);
+  background-color: var(--navy);
+}
+
+.cta__remove {
+  border-radius: 4px;
+  z-index: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--grey);
+  cursor: pointer;
+  border: none;
+  padding: 0.5rem 1rem;
+  background-color: var(--remove);
+  transition: color 0.2s ease-in-out;
+}
+
+.cta__remove:hover {
+  color: var(--yellow);
+}
+
+.header__title {
+  font-size: 2.3rem;
+  letter-spacing: 2px;
+  color: var(--yellow);
+}
+
+.main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: 10rem;
+  grid-gap: 2rem;
+}
+
+.book__card {
+  border: 1px solid var(--navy);
+  background-color: var(--grey);
+  filter: drop-shadow(0 5px 4px var(--navy_shadow));
+  border-radius: 4px;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book__info {
+  display: flex;
+  flex-direction: column;
+  min-width: fit-content;
+  gap: 1rem;
+}
+
+.book__cta {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.book__pages {
+  display: flex;
+  gap: 1rem;
+}
+
+.book__pages--number {
+  color: var(--navy);
+}
+
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: start;
+}
+.modal.open {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+  z-index: 10;
+}
+
+.modal-bg {
+  position: absolute;
+  background: var(--modal_shadow);
+  width: 100%;
+  height: 100%;
+}
+.modal-container {
+  background: #fff;
+  position: relative;
+  padding: 30px;
+  height: calc(100vh - 5rem);
+  width: 25rem;
+  transform: translateX(-100%);
+  transition: all 0.3s ease;
+}
+
+.modal-container.active {
+  transform: translateX(0);
+}
+
+.modal-close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  outline: none;
+  appearance: none;
+  background: none;
+  border: 0px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal_form {
+  margin-top: 2rem;
+}
+
+.modal__legend {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.modal_form--inputs {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  gap: 1rem;
+}
+
+.input_wrapper input[type="checkbox"] {
+  -webkit-appearance: none;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 5px;
+  border: 2px solid var(--navy);
+}
+.input_wrapper input[type="checkbox"]:checked {
+  background: var(--yellow);
+}
+
+.modal_form--cta {
+  margin-top: 2rem;
+  display: flex;
+}
+
+.modal_form--ctaBtn {
+  flex: 1;
+}
+
+.modal_form--inputs label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.modal_form--inputs input:not([type="checkbox"]) {
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+}
+
+.modal-close:hover {
+  color: red;
+}
+
+.input_wrapper:not(:last-child) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input_wrapper:last-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.github {
+  text-decoration: none;
+}
+
+.github:hover {
+  color: var(--yellow);
+  cursor: pointer;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <script src="//code.iconify.design/1/1.0.6/iconify.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="./index.js" defer></script>
+    <link
+      type="image/png"
+      sizes="16x16"
+      rel="icon"
+      href="./assets/images/library.png"
+    />
+    <title>TOP Library</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1 class="header__title">TOP Library</h1>
+      </div>
+    </header>
+    <div class="modal" id="book_form">
+      <div class="modal-bg modal-exit"></div>
+      <div class="modal-container">
+        <div class="modal_header">
+          <h2>TOP library form</h2>
+        </div>
+        <button class="modal-close modal-exit">
+          <span
+            class="iconify"
+            data-icon="ci:window-close"
+            data-width="30"
+          ></span>
+        </button>
+        <form class="modal_form" id="book_modal--form">
+          <fieldset class="modal_form--inputs">
+            <legend class="modal__legend">Add book info</legend>
+            <div class="input_wrapper">
+              <label for="book_title">Book Title</label>
+              <input type="text" id="book_title" placeholder="Title" required />
+            </div>
+            <div class="input_wrapper">
+              <label for="book_author">Book Author</label>
+              <input
+                type="text"
+                id="book_author"
+                placeholder="Author"
+                required
+              />
+            </div>
+            <div class="input_wrapper">
+              <label for="book_pages">Pages</label>
+              <input
+                type="number"
+                id="book_pages"
+                placeholder="Pages"
+                required
+              />
+            </div>
+            <div class="input_wrapper">
+              <label for="book_read">Have you read it?</label>
+              <input type="checkbox" id="book_read" required />
+            </div>
+          </fieldset>
+        </form>
+        <div class="modal_form--cta">
+          <button
+            class="modal_form--ctaBtn cta__default"
+            form="book_modal--form"
+          >
+            <span class="iconify" data-icon="akar-icons:plus"></span>Add Book
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="cta">
+      <button data-modal="book-form" class="cta__default">
+        <span class="iconify" data-icon="akar-icons:plus"></span>New Book
+      </button>
+    </div>
+    <main class="main container">
+      <article class="book__card">
+        <div class="book__info">
+          <h2 class="book__title">Harry Potter</h2>
+          <h3 class="book__author">J.K Rowling</h3>
+          <p class="book__pages">
+            <span class="book__pages--number">321</span>pages
+          </p>
+        </div>
+        <div class="book__cta">
+          read
+          <button class="cta__remove">remove</button>
+        </div>
+      </article>
+      <article class="book__card">
+        <div class="book__info">
+          <h2 class="book__title">Harry Potter</h2>
+          <h3 class="book__author">J.K Rowling</h3>
+          <p class="book__pages">
+            <span class="book__pages--number">321</span>pages
+          </p>
+        </div>
+        <div class="book__cta">
+          read
+          <button class="cta__remove">remove</button>
+        </div>
+      </article>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">
+        &copy; <span class="footer__year"></span
+        ><a class="github" href="https://github.com/MateuszUrb" target="_blank">
+          Mateusz <span class="iconify" data-icon="mdi:github"></span
+        ></a>
+      </p>
+    </footer>
+  </body>
+</html>
+section
