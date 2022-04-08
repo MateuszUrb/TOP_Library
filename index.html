@@ -46,13 +46,20 @@
             <legend class="modal__legend">Add book info</legend>
             <div class="input_wrapper">
               <label for="book_title">Book Title</label>
-              <input type="text" id="book_title" placeholder="Title" required />
+              <input
+                type="text"
+                id="book_title"
+                placeholder="Title"
+                name="book_title"
+                required
+              />
             </div>
             <div class="input_wrapper">
               <label for="book_author">Book Author</label>
               <input
                 type="text"
                 id="book_author"
+                name="book_author"
                 placeholder="Author"
                 required
               />
@@ -63,12 +70,13 @@
                 type="number"
                 id="book_pages"
                 placeholder="Pages"
+                name="book_pages"
                 required
               />
             </div>
             <div class="input_wrapper">
               <label for="book_read">Have you read it?</label>
-              <input type="checkbox" id="book_read" required />
+              <input type="checkbox" id="book_read" name="book_not_read" />
             </div>
           </fieldset>
         </form>
@@ -76,45 +84,19 @@
           <button
             class="modal_form--ctaBtn cta__default"
             form="book_modal--form"
+            type="submit"
           >
             <span class="iconify" data-icon="akar-icons:plus"></span>Add Book
           </button>
         </div>
       </div>
     </div>
-    <div class="cta">
+    <div class="cta container">
       <button data-modal="book-form" class="cta__default">
         <span class="iconify" data-icon="akar-icons:plus"></span>New Book
       </button>
     </div>
-    <main class="main container">
-      <article class="book__card">
-        <div class="book__info">
-          <h2 class="book__title">Harry Potter</h2>
-          <h3 class="book__author">J.K Rowling</h3>
-          <p class="book__pages">
-            <span class="book__pages--number">321</span>pages
-          </p>
-        </div>
-        <div class="book__cta">
-          read
-          <button class="cta__remove">remove</button>
-        </div>
-      </article>
-      <article class="book__card">
-        <div class="book__info">
-          <h2 class="book__title">Harry Potter</h2>
-          <h3 class="book__author">J.K Rowling</h3>
-          <p class="book__pages">
-            <span class="book__pages--number">321</span>pages
-          </p>
-        </div>
-        <div class="book__cta">
-          read
-          <button class="cta__remove">remove</button>
-        </div>
-      </article>
-    </main>
+    <main class="main container"></main>
     <footer class="footer">
       <p class="footer__copyright">
         &copy; <span class="footer__year"></span
